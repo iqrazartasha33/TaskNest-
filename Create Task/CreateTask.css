@@ -1,0 +1,393 @@
+@import url("https://fonts.googleapis.com/css2?family=Domine:wght@400..700&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap");
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+body {
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  background: linear-gradient(
+    135deg,
+    rgb(41, 174, 197) 0%,
+    whitesmoke 50%,
+    rgb(237, 13, 219) 100%
+  );
+  overflow: hidden;
+}
+
+.navbar {
+  background-color: black;
+  padding: 15px 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+}
+.logo-section {
+  font-size: 2rem;
+  font-weight: bold;
+  font-family: "Arial", sans-serif;
+  display: flex;
+  align-items: center;
+}
+
+.logo-text {
+  background: linear-gradient(
+    135deg,
+    rgb(41, 174, 197) 0%,
+    whitesmoke 50%,
+    rgb(237, 13, 219) 100%
+  );
+  -webkit-background-clip: text;
+  color: transparent;
+  padding: 5px;
+  letter-spacing: 2px;
+  background-color: #b46fd0;
+}
+
+.nav-links {
+  display: flex;
+  gap: 25px;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.nav-links li a {
+  color: white;
+  text-decoration: none;
+  font-weight: 500;
+  transition: 0.3s;
+}
+
+.nav-links li a:hover {
+  color: plum;
+  border-radius: 20px;
+}
+
+.right-buttons {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+
+.signin-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: white;
+  color: #333;
+  padding: 8px 14px;
+  border-radius: 5px;
+  text-decoration: none;
+  font-weight: bold;
+  font-size: 1rem;
+}
+
+.signin-btn i {
+  color: #4285f4;
+  font-size: 1.2rem;
+}
+
+.user-details {
+  display: none;
+  align-items: center;
+  gap: 10px;
+}
+
+#user-email {
+  color: white;
+  font-weight: bold;
+}
+
+.logout-btn {
+  background-color: red;
+  color: white;
+  border: none;
+  padding: 6px 10px;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 0.9rem;
+  display: flex;
+  align-items: center;
+  gap: 2px;
+}
+
+.logout-btn:hover {
+  background-color: #c82333;
+}
+.menu-toggle {
+  font-size: 30px;
+  color: white;
+  background: none;
+  border: none;
+  cursor: pointer;
+  display: none;
+}
+.close-icon {
+  display: none;
+  justify-content: flex-end;
+}
+
+.close-icon i {
+  font-size: 30px;
+  color: white;
+  cursor: pointer;
+}
+
+@media (max-width: 768px) {
+  .menu-toggle {
+    display: block;
+  }
+
+  .close-icon {
+    display: flex;
+    margin-bottom: 20px;
+  }
+
+  .nav-links {
+    position: absolute;
+    top: 95px;
+    left: 0;
+    width: 100%;
+    background-color: black;
+    flex-direction: column;
+    padding: 20px;
+    display: none;
+    gap: 20px;
+  }
+
+  .nav-links.active {
+    display: flex;
+  }
+}
+
+html,
+body {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  overflow-y: auto;
+  font-family: Arial, sans-serif;
+  background-color: #f0f2f5;
+}
+
+#taskForm {
+  max-width: 500px;
+  margin: 5px auto;
+  padding: 20px;
+  border: 2px solid #ccc;
+  border-radius: 12px;
+  background-color: #f9f9f9;
+}
+
+#taskForm h2 {
+  text-align: center;
+  margin-bottom: 20px;
+  font-size: 28px;
+  letter-spacing: 1px;
+  background: linear-gradient(
+    135deg,
+    rgb(237, 13, 219) 0%,
+    rgb(72, 219, 245) 100%
+  );
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  font-weight: 700;
+  font-family: "Roboto", sans-serif;
+}
+
+#taskForm div {
+  margin-bottom: 15px;
+}
+
+#taskForm label {
+  display: block;
+  margin-bottom: 6px;
+  font-weight: bold;
+  color: #555;
+}
+
+#taskForm input[type="text"],
+#taskForm textarea,
+#taskForm select {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #aaa;
+  border-radius: 6px;
+  font-size: 16px;
+  box-sizing: border-box;
+  box-shadow: 0 0 12px rgb(41, 174, 197);
+}
+#taskForm input[type="text"]:focus,
+#taskForm textarea:focus,
+#taskForm select:focus {
+  border-color: rgb(237, 13, 219);
+  box-shadow: 0 0 5px rgb(237, 13, 219);
+  outline: none;
+}
+
+#saveTaskBtn {
+  width: 100%;
+  padding: 12px;
+  background-color: rgb(237, 13, 219);
+  color: white;
+  border: none;
+  font-size: 20px;
+  border-radius: 20px;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.3s ease,
+    box-shadow 0.3s ease;
+  border: 2px solid plum;
+}
+
+#saveTaskBtn:hover {
+  background-color: rgb(41, 174, 197);
+  border: 3px solid rgb(41, 174, 197);
+  color: white;
+  transform: translateY(-3px);
+  box-shadow: 0 0 12px rgb(41, 174, 197);
+}
+
+#deleteSection {
+  max-width: 500px;
+  margin: 20px auto;
+  text-align: center;
+}
+
+#deleteTaskBtn {
+  padding: 12px 20px;
+  border: none;
+  font-size: 18px;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+#deleteTaskBtn:hover {
+  background-color: darkred;
+}
+@media (max-width: 360px) {
+  #taskForm {
+    padding: 15px;
+    margin: 10px;
+  }
+
+  #taskForm h2 {
+    font-size: 20px;
+  }
+
+  #taskForm input[type="text"],
+  #taskForm textarea,
+  #taskForm select {
+    font-size: 14px;
+    padding: 8px;
+  }
+
+  #saveTaskBtn {
+    padding: 10px;
+    font-size: 16px;
+    border-radius: 16px;
+  }
+
+  #deleteTaskBtn {
+    padding: 10px 15px;
+    font-size: 16px;
+  }
+}
+@media (min-width: 361px) and (max-width: 480px) {
+  #taskForm {
+    padding: 18px;
+    margin: 10px;
+  }
+
+  #taskForm h2 {
+    font-size: 24px;
+  }
+
+  #taskForm input[type="text"],
+  #taskForm textarea,
+  #taskForm select {
+    font-size: 15px;
+    padding: 9px;
+  }
+
+  #saveTaskBtn {
+    padding: 11px;
+    font-size: 18px;
+    border-radius: 18px;
+  }
+
+  #deleteTaskBtn {
+    padding: 11px 18px;
+    font-size: 17px;
+  }
+}
+@media (min-width: 481px) and (max-width: 600px) {
+  #taskForm {
+    padding: 20px;
+    margin: 15px auto;
+  }
+
+  #taskForm h2 {
+    font-size: 26px;
+  }
+
+  #taskForm input[type="text"],
+  #taskForm textarea,
+  #taskForm select {
+    font-size: 16px;
+    padding: 10px;
+  }
+
+  #saveTaskBtn {
+    padding: 12px;
+    font-size: 19px;
+    border-radius: 20px;
+  }
+
+  #deleteTaskBtn {
+    padding: 12px 20px;
+    font-size: 18px;
+  }
+}
+@media (min-width: 601px) and (max-width: 768px) {
+  #taskForm {
+    max-width: 90%;
+    margin: 20px auto;
+    padding: 24px;
+  }
+
+  #taskForm h2 {
+    font-size: 26px;
+    text-align: center;
+  }
+
+  #taskForm input[type="text"],
+  #taskForm textarea,
+  #taskForm select {
+    font-size: 16.5px;
+    padding: 11px;
+  }
+
+  #saveTaskBtn {
+    font-size: 19px;
+    padding: 13px;
+    border-radius: 20px;
+  }
+
+  #deleteSection {
+    max-width: 90%;
+    margin-top: 20px;
+  }
+
+  #deleteTaskBtn {
+    font-size: 17.5px;
+    padding: 12px 22px;
+    border-radius: 10px;
+  }
+}
